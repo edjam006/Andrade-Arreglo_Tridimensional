@@ -17,6 +17,11 @@ int main(int argc, char const *argv[])
     for (int i = 0; i < a; i++) {
         for (int j = 0; j < b; j++) {
             for (int k = 0; k < c; k++) {
+                 if (i == c - 1) {
+                    matriz[i][j][k] = 1; // Última "capa" inicializada con unos
+                } else {
+                    matriz[i][j][k] = 0; // Resto con ceros
+                }
             }
         }
         
