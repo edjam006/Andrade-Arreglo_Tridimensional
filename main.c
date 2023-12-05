@@ -1,30 +1,43 @@
+
 #include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
 
 int main(int argc, char const *argv[])
 {
-    srand(time(NULL));
+    
     int a, b, c;
-    printf("Ingrese el numero de filas de la matriz\n");
+    printf("Ingrese cuantas matrices desea imprimir : \n");
     scanf("%d", &a);
-    printf("Ingrese el numero de columnas de la matriz\n");
+    printf("Ingrese filas: \n");
     scanf("%d", &b);
-    printf("Ingrese la tercera dimension de la matriz\n");
+    printf("Ingrese columnas: \n");
     scanf("%d", &c);
 
-    int matriz[a][b][c];
-    for (int i = 0; i < a; i++) {
-        for (int j = 0; j < b; j++) {
-            for (int k = 0; k < c; k++) {
-                 if (i == c - 1) {
-                    matriz[i][j][k] = 1; // Última "capa" inicializada con unos
+    
+    int Matriz[a][b][c];
+
+    
+    printf("Matriz");
+
+    
+    for (int k = 0; k < c; k++) {
+        printf("\nMatriz %d:\n", k + 1);
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < b; j++) {
+                if (k == c - 1) {
+                    
+                    Matriz[k][i][j] = 1;
                 } else {
-                    matriz[i][j][k] = 0; // Resto con ceros
+                    
+                    Matriz[k][i][j] = 0;
                 }
+                
+                printf("%d\t", Matriz[k][i][j]);
             }
+            printf("\n");
         }
-        
+        printf("\n");
     }
+
     return 0;
 }
+
